@@ -1,0 +1,26 @@
+{
+  "name": "codepipeline-to-s3",
+  "version": "0.0.1",
+  "description": "An AWS Lambda function written on Node.js that deploys static files from CodePipeline stream to S3 bucket.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yarovoy/codepipeline-to-s3.git"
+  },
+  "keywords": [
+    "AWS",
+    "Lambda",
+    "CodePipeline",
+    "S3",
+    "deployment"
+  ],
+  "author": "Yuriy Yarovoy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yarovoy/codepipeline-to-s3/issues"
+  },
+  "homepage": "https://github.com/Yarovoy/codepipeline-to-s3#readme"
+}
