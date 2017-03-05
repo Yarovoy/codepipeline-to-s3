@@ -26,3 +26,7 @@ exports.handler = (event, context, callback) => {
             .then(() => callback(error.message));
     }
 
+    downloadArtifactFromS3()
+        .then(notifyJobSuccess)
+        .catch(notifyJobFailure);
+};
