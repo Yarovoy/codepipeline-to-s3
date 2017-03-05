@@ -26,6 +26,8 @@ exports.handler = (event, context, callback) => {
             },
         };
 
+        console.error(error);
+
         return codePipeline.putJobFailureResult(params).promise()
             .then(() => callback(error.message));
     }
