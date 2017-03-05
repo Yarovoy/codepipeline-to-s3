@@ -9,6 +9,10 @@ exports.handler = (event, context, callback) => {
     const jobData = event['CodePipeline.job'].data;
     const jobId = event['CodePipeline.job'].id;
 
+    const accessKeyId = jobData.artifactCredentials.accessKeyId;
+    const secretAccessKey = jobData.artifactCredentials.secretAccessKey;
+    const sessionToken = jobData.artifactCredentials.sessionToken;
+
     function notifyJobSuccess() {
         return codePipeline.putJobSuccessResult({jobId}).promise()
             .then(() => callback(null));
