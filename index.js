@@ -3,6 +3,8 @@
 const AWS = require('aws-sdk');
 const codePipeline = new AWS.CodePipeline();
 
+const artifactPath = '/tmp/artifact.zip';
+
 exports.handler = (event, context, callback) => {
     const jobData = event['CodePipeline.job'].data;
     const jobId = event['CodePipeline.job'].id;
