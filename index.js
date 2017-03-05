@@ -51,16 +51,16 @@ exports.handler = (event, context, callback) => {
                 signatureVersion: 'v4',
             });
 
-            const request = s3.getObject({Key: artifactData.location.s3Location.objectKey});
-            request.on('error', reject);
-
             const writeStream = fs.createWriteStream(artifactPath);
-            writeStream.on('error', reject);
-            writeStream.once('finish', resolve);
+            writeStream.on('error', reject)
+                .once('finish', resolve);
 
-            const readStream = request.createReadStream();
-            readStream.on('error', reject);
-            readStream.pipe(writeStream);
+            //noinspection JSUnresolvedFunction
+            s3.getObject({Key: artifactData.location.s3Location.objectKey})
+                .on('error', reject)
+                .createReadStream()
+                .on('error', reject)
+                .pipe(writeStream);
         });
     }
 
