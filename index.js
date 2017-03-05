@@ -4,6 +4,6 @@ const AWS = require('aws-sdk');
 const codePipeline = new AWS.CodePipeline();
 
 exports.handler = (event, context, callback) => {
-    // TODO implement
-    callback(null, 'Hello from Lambda');
-};
+    const jobData = event['CodePipeline.job'].data;
+    const jobId = event['CodePipeline.job'].id;
+
